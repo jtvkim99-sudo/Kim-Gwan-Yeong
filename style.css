@@ -1,7 +1,23 @@
-.top-banner {
-  width: 100%;
-  padding: 28px 16px;
+body {
+  margin: 0;
+  padding-top: 140px; /* 🔥 고정 배너 높이 */
+  background: #ffffff;
+  color: #111827;
+  text-align: center;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
 
+/* =========================
+   상단 고정 배너
+========================= */
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 28px 16px;
   background: #1d4ed8;
   color: white;
 
@@ -14,41 +30,41 @@
   line-height: 1.1;
   font-weight: 800;
 
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 9999;
 }
 
-.hero {
-  margin-top: 120px;
+/* =========================
+   히어로 이미지
+========================= */
+.hero-image {
+  margin-top: 160px;           /* 상단 배너 아래 여백 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-  margin: 0;
-  padding-top: 140px; /* 🔥 배너 높이만큼 */
-  background: #ffffff;
-  color: #111827;
-  text-align: center;
-  font-family: sans-serif;
-
-  overflow-x: hidden;
-  overflow-y: auto;
+.hero-image img {
+  width: 220px;                /* 🔥 작게 */
+  height: 220px;               /* 🔥 정사각형 */
+  object-fit: cover;           /* 얼굴 안 찌그러짐 */
+  border-radius: 50%;          /* 🔥 완전 원형 */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #fff;
 }
-
-
-
+/* =========================
+   제목
+========================= */
 .title {
   position: relative;
   z-index: 10;
+  margin-top: 60px;
+  margin-bottom: 140px; /* 🔥 이게 핵심 */
 }
 
-.carousel-container {
-  margin-top: 80px; /* 기존 60px → 80px */
-  isolation: isolate;
-}
 
-/* 3D 공간 */
+/* =========================
+   캐러셀 컨테이너
+========================= */
 .carousel-container {
   perspective: 1600px;
   width: 100%;
@@ -57,6 +73,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 120px;
 }
 
 /* 회전축 */
@@ -64,37 +82,20 @@ body {
   position: relative;
   width: 420px;
   height: 520px;
-
   transform-style: preserve-3d;
 }
 
-/* 이미지 */
+/* 캐러셀 이미지 */
 .carousel img {
   position: absolute;
   top: 50%;
   left: 50%;
 
   transform: translate(-50%, -50%);
-
-
   width: 320px;
   height: auto;
 
-  transform-style: preserve-3d;
   backface-visibility: hidden;
-
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-/* 히어로 섹션 */
-.hero {
-  margin-top: 120px; /* 고정 배너 높이만큼 */
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
 }
