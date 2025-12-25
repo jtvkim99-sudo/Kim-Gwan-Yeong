@@ -63,6 +63,17 @@ body {
 
 
 /* =========================
+   제목 (중앙 + 간격 축소)
+========================= */
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-top: 40px;     /* ⬇ 위 간격 줄임 */
+  margin-bottom: 60px;  /* ⬇ 아래 간격 줄임 */
+}
+
+/* =========================
    캐러셀 컨테이너
 ========================= */
 .carousel-container {
@@ -72,17 +83,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
 }
 
-.carousel {
+/* 🔥 절대 고정 스테이지 */
+.carousel-stage {
   position: relative;
   width: 420px;
   height: 520px;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 🔥 회전 주체 */
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 0;   /* 🔥 중심 고정 */
+  will-change: transform;
+}
+
+/* 이미지 */
 .carousel img {
   position: absolute;
   top: 50%;
@@ -94,6 +117,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
+
 
 /* 📱 모바일 */
 @media (max-width: 768px) {
