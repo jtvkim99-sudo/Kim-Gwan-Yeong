@@ -156,3 +156,20 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
+
+.side-poster {
+  position: fixed;
+  top: 220px;                 /* 배너 + 히어로 아래 */
+  
+  /* 🔥 핵심 계산식 */
+  left: calc(50% - 550px - 260px - 20px);
+
+  z-index: 8000;
+}
+
+.side-poster img {
+  width: 260px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
